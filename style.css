@@ -1,0 +1,101 @@
+@mport url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Općeniti stilovi */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #555;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+header {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 20px;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Stilovi za galeriju slika */
+.image-gallery {
+    margin-top: 40px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Responzivni dizajn */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+}
