@@ -22,43 +22,43 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025. Moja putovanja. Sva prava pridržana.</p>
-    </footer>
+   <script>
+    // Postavi datum i vrijeme tvog sljedećeg putovanja
+    // Mjeseci u JavaScriptu idu od 0 (siječanj) do 11 (prosinac)
+    // Format: Godina, Mjesec, Dan, Sat, Minuta, Sekunda
+    const destinationDate = new Date(2026, 8, 1, 17, 0, 0).getTime();
 
-    <script>
-        // Postavi datum i vrijeme tvog sljedećeg putovanja
-        // Mjeseci u JavaScriptu idu od 0 (siječanj) do 11 (prosinac)
-        // Format: Godina, Mjesec, Dan, Sat, Minuta, Sekunda
-        const destinationDate = new Date(2025, 11, 25, 10, 0, 0).getTime();
+    const countdown = setInterval(function() {
+        const now = new Date().getTime();
+        let distance = destinationDate - now;
 
-        const countdown = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = destinationDate - now;
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown").innerHTML = "ROADTRIP JE POČEO!";
+            return;
+        }
 
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "AVANTURA JE POČELA! SRETAN PUT!";
-                return;
-            }
+        const years = Math.floor(distance / (1000 * 60 * 60 * 24 * 365.25));
+        distance %= (1000 * 60 * 60 * 24 * 365.25);
 
-            // Izračunaj mjesece, dane, sate, minute i sekunde
-            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.44)); // Prosječan broj dana u mjesecu
-            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.44));
+        distance %= (1000 * 60 * 60 * 24 * 30.44);
 
-            // Prikaz na stranici
-            document.getElementById("countdown").innerHTML = `
-                <div class="countdown-item"><span>${months}</span><p>mj</p></div>
-                <div class="countdown-item"><span>${days}</span><p>dana</p></div>
-                <div class="countdown-item"><span>${hours}</span><p>sati</p></div>
-                <div class="countdown-item"><span>${minutes}</span><p>minuta</p></div>
-                <div class="countdown-item"><span>${seconds}</span><p>sekundi</p></div>
-            `;
-        }, 1000);
-    </script>
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        distance %= (1000 * 60 * 60 * 24);
+
+        const hours = Math.floor(distance / (1000 * 60 * 60));
+        distance %= (1000 * 60 * 60);
+
+        const minutes = Math.floor(distance / (1000 * 60));
+        distance %= (1000 * 60);
+
+        const seconds = Math.floor(distance / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            `${years} g ${months} mj ${days} d ${hours} h ${minutes} min ${seconds} s`;
+    }, 1000);
+</script>
 
 <p>Ovdje možete pročitati o zabavnim i stresnim situacijama na našim putovanjima. :) </p>
 <a href="europa.html">Europa</a>
@@ -66,6 +66,10 @@
 <a href="africa/index.html">Afrika</a>
 <a href="juzna_amerika/index.html">Južna Amerika</a>
 <a href="srednja_amerika/index.html">Srednja Amerika</a>
+
+   <footer>
+        <p>&copy; 2025. Travel Espresso. Sva prava pridržana.</p>
+    </footer>
 
 </body>
 </html>
