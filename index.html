@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hr">
 <head>
   <meta charset="UTF-8">
@@ -6,6 +6,60 @@
 </head>
 <body>
 <h1>Dobrodošli na Travel Espresso </h1>
+
+  <main>
+        <div class="countdown-container">
+            <p>Do sljedeće avanture brojimo još:</p>
+            <div id="countdown">
+                </div>
+        </div>
+        
+        <section class="travel-entries">
+            <h2>Naše avanture</h2>
+            <ul>
+                <li><a href="Croatia_day1.html">Hrvatska: Dan 1 u Zagrebu</a></li>
+                </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Moja putovanja. Sva prava pridržana.</p>
+    </footer>
+
+    <script>
+        // Postavi datum i vrijeme tvog sljedećeg putovanja
+        // Mjeseci u JavaScriptu idu od 0 (siječanj) do 11 (prosinac)
+        // Format: Godina, Mjesec, Dan, Sat, Minuta, Sekunda
+        const destinationDate = new Date(2025, 11, 25, 10, 0, 0).getTime();
+
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = destinationDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "AVANTURA JE POČELA! SRETAN PUT!";
+                return;
+            }
+
+            // Izračunaj mjesece, dane, sate, minute i sekunde
+            const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.44)); // Prosječan broj dana u mjesecu
+            const days = Math.floor((distance % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Prikaz na stranici
+            document.getElementById("countdown").innerHTML = `
+                <div class="countdown-item"><span>${months}</span><p>mj</p></div>
+                <div class="countdown-item"><span>${days}</span><p>dana</p></div>
+                <div class="countdown-item"><span>${hours}</span><p>sati</p></div>
+                <div class="countdown-item"><span>${minutes}</span><p>minuta</p></div>
+                <div class="countdown-item"><span>${seconds}</span><p>sekundi</p></div>
+            `;
+        }, 1000);
+    </script>
+
 <p>Ovdje možete pročitati o zabavnim i stresnim situacijama na našim putovanjima. :) </p>
 <a href="europa.html">Europa</a>
 <a href="asia/index.html">Azija</a>
