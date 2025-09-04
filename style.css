@@ -1,9 +1,17 @@
 /* style.css */
 
 body {
-    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-family: sans-serif, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-size: 16px; /* Primjer normalne veličine fonta */
     line-height: 1.6; /* Povećaj razmak između linija za lakše čitanje */
+}
+
+
+/* U tvojoj CSS datoteci ili u <style> tagu u HTML head-u */
+
+img {
+  width: 500px;
+  height: auto; /* 'auto' osigurava da slika zadrži svoje originalne proporcije */
 }
 
 /* Napomena: Calibri nije standardan web font, pa je važno navesti
