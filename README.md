@@ -1,1 +1,1 @@
-eAT, DRINK, SLEEP AND REPEAT!
+Eat, drink, sleep  and repeat!
